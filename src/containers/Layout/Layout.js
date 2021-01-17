@@ -7,23 +7,26 @@ import Bookmark from './../Bookmark/Bookmark';
 
 const Layout = () => {
     return (
-        <Switch>
-            <Route path="/feed">
-                <Feed />
-            </Route>
-            <Route path="/trending">
-                <Trending />
-            </Route>
-            <Route path="/notification">
-                <Notification />
-            </Route>
-            <Route path="/bookmark">
-                <Bookmark />
-            </Route>
-            <Route exact path="/">
-                <Redirect to="/feed" />
-            </Route>
-        </Switch>
+        <div className="h-screen w-full overflow-y-scroll">
+            <Switch>
+                <Route path="/feed">
+                    <Feed />
+                </Route>
+                <Route path="/trending">
+                    <Trending />
+                </Route>
+                <Route path="/notification">
+                    <Notification />
+                </Route>
+                <Route path="/bookmark">
+                    <Bookmark />
+                </Route>
+                <Route exact path="/">
+                    <Redirect to="/feed" />
+                </Route>
+            </Switch>
+        </div>
+
     )
 }
 

@@ -6,7 +6,7 @@ import Sidenav from "./containers/Sidenav/Sidenav";
 
 const App = () => {
 
-    const [authState, setAuthState] = useState(false);
+    const [authState, setAuthState] = useState(true);
 
     return (
         <Router>

@@ -1,8 +1,8 @@
 import SidenavItem from "./SidenavItem/SidenavItem";
 import { FaTwitter, FaSlackHash, FaBookmark } from 'react-icons/fa';
 import { HiHome, HiBell } from 'react-icons/hi';
-import Tweet from "../../components/Tweet/Tweet";
 import Avatar from "../../components/Avatar/Avatar";
+import CreateTweet from "./CreateTweet/CreateTweet";
 
 const Sidenav = () => {
 
@@ -19,13 +19,14 @@ const Sidenav = () => {
             <div>
                 {navList.map(navItem =>
                     <SidenavItem
+                        key={navItem.title}
                         title={navItem.title}
                         icon={navItem.icon}
                         link={navItem.link}
                     />
                 )}
 
-                <Tweet />
+                <CreateTweet />
             </div>
             <Avatar />
         </div>
