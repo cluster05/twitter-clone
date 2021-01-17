@@ -8,14 +8,14 @@ const Sidenav = () => {
 
     const navList = [
         { title: 'twitter', icon: <FaTwitter />, link: '/' },
-        { title: 'home', icon: <HiHome />, link: '/feed' },
+        { title: 'feed', icon: <HiHome />, link: '/feed' },
         { title: 'trending', icon: <FaSlackHash />, link: '/trending' },
         { title: 'notification', icon: <HiBell />, link: '/notification' },
         { title: 'bootmark', icon: <FaBookmark />, link: '/bookmark' },
     ];
 
     return (
-        <div className="w-20 py-2 flex flex-col justify-between">
+        <div className="w-32 flex flex-col justify-between">
             <div>
                 {navList.map(navItem =>
                     <SidenavItem
@@ -24,8 +24,9 @@ const Sidenav = () => {
                         link={navItem.link}
                     />
                 )}
+
+                <Tweet />
             </div>
-            <Tweet />
             <Avatar />
         </div>
     )
