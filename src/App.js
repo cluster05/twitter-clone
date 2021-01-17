@@ -3,7 +3,7 @@ import Sidenav from "./containers/Sidenav/Sidenav";
 
 const App = () => {
     return (
-        <div className="bg-gray-900 flex">
+        <div className="bg-gray-900 flex w-screen h-screen">
             <Sidenav />
             <Layout />
         </div>

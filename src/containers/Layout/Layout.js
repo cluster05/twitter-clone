@@ -1,4 +1,3 @@
-import Sidenav from "../Sidenav/Sidenav"
 
 const Layout = () => {
     return (
