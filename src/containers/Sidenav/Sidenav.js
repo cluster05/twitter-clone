@@ -1,9 +1,10 @@
 import SidenavItem from "./SidenavItem/SidenavItem";
 import { FaTwitter, FaSlackHash, FaBookmark } from 'react-icons/fa';
 import { HiHome, HiBell } from 'react-icons/hi';
+import Tweet from "../../components/Tweet/Tweet";
+import Avatar from "../../components/Avatar/Avatar";
 
 const Sidenav = () => {
-
 
     const navList = [
         { title: 'twitter', icon: <FaTwitter />, link: '/' },
@@ -14,7 +15,7 @@ const Sidenav = () => {
     ];
 
     return (
-        <div className="w-20 py-3 flex flex-col justify-between">
+        <div className="w-20 py-2 flex flex-col justify-between">
             <div>
                 {navList.map(navItem =>
                     <SidenavItem
@@ -24,9 +25,8 @@ const Sidenav = () => {
                     />
                 )}
             </div>
-            <div className="m-2 p-3">
-                <img className="w-8 h-8 rounded-full" src="https://via.placeholder.com/150" alt="user avatar" />
-            </div>
+            <Tweet />
+            <Avatar />
         </div>
     )
 }
