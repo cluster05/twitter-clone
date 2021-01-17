@@ -1,8 +1,13 @@
+import Layout from "./containers/Layout/Layout";
+import Sidenav from "./containers/Sidenav/Sidenav";
 
-function App() {
-  return (
-    <div></div>
-  );
+const App = () => {
+    return (
+        <div className="bg-gray-900 flex">
+            <Sidenav />
+            <Layout />
+        </div>
+    )
 }
 
 export default App;
