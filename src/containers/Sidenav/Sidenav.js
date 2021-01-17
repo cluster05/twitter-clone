@@ -9,7 +9,7 @@ const Sidenav = () => {
     const navList = [
         { title: 'twitter', icon: <FaTwitter />, link: '/' },
         { title: 'home', icon: <HiHome />, link: '/feed' },
-        { title: 'treding', icon: <FaSlackHash />, link: '/treding' },
+        { title: 'trending', icon: <FaSlackHash />, link: '/trending' },
         { title: 'notification', icon: <HiBell />, link: '/notification' },
         { title: 'bootmark', icon: <FaBookmark />, link: '/bookmark' },
     ];
