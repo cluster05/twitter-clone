@@ -7,7 +7,7 @@ import CreateTweet from "./CreateTweet/CreateTweet";
 const Sidenav = () => {
 
     const navList = [
-        { title: 'twitter', icon: <FaTwitter />, link: '/' },
+        { title: 'twitter', icon: <FaTwitter />, link: '' },
         { title: 'feed', icon: <HiHome />, link: '/feed' },
         { title: 'trending', icon: <FaSlackHash />, link: '/trending' },
         { title: 'notification', icon: <HiBell />, link: '/notification' },

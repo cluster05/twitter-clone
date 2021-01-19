@@ -1,10 +1,9 @@
 import React from 'react'
+import UnderMaintainance from '../../components/UnderMaintainance/UnderMaintainance'
 
 const Trending = () => {
     return (
-        <div>
-
-        </div>
+        <UnderMaintainance />
     )
 }
 

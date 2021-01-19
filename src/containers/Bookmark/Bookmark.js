@@ -1,10 +1,8 @@
-import React from 'react'
+import UnderMaintainance from '../../components/UnderMaintainance/UnderMaintainance'
 
 const Bookmarks = () => {
     return (
-        <div>
-
-        </div>
+        <UnderMaintainance />
     )
 }
 

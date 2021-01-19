@@ -1,10 +1,8 @@
-import React from 'react'
+import UnderMaintainance from '../../components/UnderMaintainance/UnderMaintainance'
 
 const Notification = () => {
     return (
-        <div>
-
-        </div>
+        <UnderMaintainance />
     )
 }
 

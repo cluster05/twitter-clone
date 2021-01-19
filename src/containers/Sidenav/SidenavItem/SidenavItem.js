@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 const SidenavItem = ({ title, icon, link }) => {
 
     const classList = ["m-3", "p-3", "text-4xl", "text-gray-600", "hover:text-gray-400"]
@@ -11,11 +12,11 @@ const SidenavItem = ({ title, icon, link }) => {
     }
 
     return (
-        <Link to={link}>
+        <NavLink to={link}>
             <div className={classList.join(' ')}>
                 {icon}
             </div>
-        </Link>
+        </NavLink>
     )
 }
 

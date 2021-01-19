@@ -24,6 +24,7 @@ const CreateTweetBox = () => {
                 </textarea>
                 <div className="flex justify-end">
                     <button
+                        onClick={tweetContext.changeCreateTweet}
                         className="px-4 py-2 my-2 text-sm bg-blue-400 text-white rounded-md tracking-wider">
                         Tweet
                         </button>
