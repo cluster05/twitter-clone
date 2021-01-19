@@ -1,4 +1,3 @@
-
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Feed from './../Feed/Feed';
 import Trending from './../Trending/Trending';
@@ -6,7 +5,9 @@ import Notification from './../Notification/Notification';
 import Bookmark from './../Bookmark/Bookmark';
 
 const Layout = () => {
+
     return (
+
         <div className="h-screen w-full overflow-y-scroll">
             <Switch>
                 <Route path="/feed">
