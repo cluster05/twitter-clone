@@ -3,3 +3,8 @@
 <p align="center">
     <img src="https://github.com/cluster05/twitter-clone/blob/readme/src/assets/twitter.gif" alt="twitter-clone" width="800px" height="400px"/>
 </p>
+
+<p align="center">
+    <a href="https://cluster05.github.io/feed"> View on Live server </a>
+</p>
+
