@@ -8,7 +8,7 @@ const CreateTweetBox = () => {
     const tweetContext = useContext(TweetContext);
 
     return (
-        <div className="w-screen h-screen absolute top-0 left-0 bg-gray-900 bg-opacity-50">
+        <div className="w-screen h-screen absolute top-0 left-0 bg-gray-900 bg-opacity-90">
             <div className="bg-gray-800 rounded-md py-5 px-8  max-w-lg mx-auto my-10 relative">
                 <div className="text-blue-400 text-4xl absolute -top-2 -right-2"
                     onClick={tweetContext.changeCreateTweet}

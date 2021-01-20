@@ -8,27 +8,28 @@ import { TweetContext } from './Context/TweetContext';
 
 const App = () => {
 
-    const [authState, setAuthState] = useState(false);
+    const [authState, setAuthState] = useState(true);
     const [createTweet, setCreateTweet] = useState(false);
-
-
 
     return (
         <Router>
-            {!authState ?
-                <Register goWithGoogle={() => setAuthState(true)} /> :
-                null
+            {
+                !authState ?
+                    <Register goWithGoogle={() => setAuthState(true)} /> :
+                    <TweetContext.Provider
+                        value={{ changeCreateTweet: () => setCreateTweet(!createTweet) }}
+                    >
+                        {
+                            createTweet ?
+                                <CreateTweetBox /> :
+                                <div className="bg-gray-900 flex w-screen h-screen">
+                                    <Sidenav />
+                                    <Layout />
+                                </div>
+                        }
+
+                    </TweetContext.Provider>
             }
-            <div className="bg-gray-900 flex w-screen h-screen">
-                <TweetContext.Provider value={{ changeCreateTweet: () => setCreateTweet(!createTweet) }}>
-                    {createTweet ?
-                        <CreateTweetBox /> :
-                        null
-                    }
-                    <Sidenav />
-                    <Layout />
-                </TweetContext.Provider>
-            </div>
         </Router >
     )
 }
