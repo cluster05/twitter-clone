@@ -5,7 +5,7 @@ const Feed = () => {
 
     const TWEET_URL = 'https://jsonplaceholder.typicode.com/posts';
 
-    const [tweets, setTweets] = useState([])
+    const [tweets, setTweets] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
