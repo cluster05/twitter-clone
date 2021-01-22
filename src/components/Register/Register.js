@@ -15,6 +15,12 @@ const Register = ({ goWithGoogle }) => {
 
                 </div>
             </div>
+            <div className="text-gray-300 max-w-md mx-auto text-xs p-5 border rounded">
+                <ul>
+                    <li className="mt-2"> Hey user , Don't worry of you Log In with Google this is just for test purpose. </li>
+                    <li className="mt-2"> We Don't have any intention to sell your any of data to Third Party </li>
+                </ul>
+            </div>
         </div>
     )
 }
