@@ -1,11 +1,34 @@
 import { useState, useContext } from "react";
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { TweetContext } from "../../../../Context/TweetContext";
+import { useUser } from './../../../../hooks/useUser';
+import firebase from 'firebase';
 
 const CreateTweetBox = () => {
 
-    const [tweetText, setTweetText] = useState('')
+    const [tweetText, setTweetText] = useState('');
     const tweetContext = useContext(TweetContext);
+    const user = useUser();
+
+    const saveTweet = () => {
+
+        if (tweetText.length < 5) {
+            alert('not valid text. Minimum lenght shold be greater than 4');
+            return
+        } else if (tweetText.length > 120) {
+            alert('length is to big. Maximum lenght shold be less than 120');
+            return;
+        }
+
+        const payload = {
+            tweet: tweetText,
+            created_at: Date.now(),
+            user
+        };
+        const timeStamp = Date.now() + '-' + user.uid
+        firebase.database().ref('/tweets/' + timeStamp).set(payload);
+        tweetContext.changeCreateTweet();
+    }
 
     return (
         <div className="w-screen h-screen absolute top-0 left-0 bg-gray-900 bg-opacity-90">
@@ -24,7 +47,7 @@ const CreateTweetBox = () => {
                 </textarea>
                 <div className="flex justify-end">
                     <button
-                        onClick={tweetContext.changeCreateTweet}
+                        onClick={saveTweet}
                         className="px-4 py-2 my-2 text-sm bg-blue-400 text-white rounded-md tracking-wider">
                         Tweet
                         </button>
@@ -35,3 +58,5 @@ const CreateTweetBox = () => {
 }
 
 export default CreateTweetBox;
+
+

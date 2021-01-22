@@ -3,10 +3,6 @@ import Tweet from './Tweet/Tweet'
 
 const Tweets = ({ tweets }) => {
 
-    const random = Math.floor(Math.random() * 30) + 1;
-
-    tweets = tweets.splice(random, random + 20);
-
     return (
         <div>
             {

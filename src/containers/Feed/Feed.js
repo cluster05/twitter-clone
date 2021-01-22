@@ -1,19 +1,36 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Tweets from '../../components/Tweets/Tweets';
-const Feed = () => {
+import firebase from 'firebase';
 
-    const TWEET_URL = 'https://jsonplaceholder.typicode.com/posts';
+const Feed = () => {
 
     const [tweets, setTweets] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await axios.get(TWEET_URL);
-            const tweetsResponse = response.data;
-            setTweets(tweetsResponse);
-        }
-        fetchData();
+
+        const database = firebase.database();
+
+        database.ref('/tweets').on('value', snapshot => {
+
+            const tweetArray = [];
+            const tweetsResponse = snapshot.val();
+
+            setTweets([]);
+
+            if (tweetsResponse) {
+                Object.keys(tweetsResponse).forEach(key => {
+                    const tweet = {
+                        id: key,
+                        ...tweetsResponse[key]
+                    }
+                    tweetArray.push(tweet)
+                });
+                setTweets(tweetArray);
+            }
+            console.log(tweetArray);
+        });
+
     }, [])
 
     return (
