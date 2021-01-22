@@ -3,12 +3,13 @@ import Feed from './../Feed/Feed';
 import Trending from './../Trending/Trending';
 import Notification from './../Notification/Notification';
 import Bookmark from './../Bookmark/Bookmark';
+import './Layout.css';
 
 const Layout = () => {
 
     return (
 
-        <div className="h-screen w-full overflow-y-scroll">
+        <div className="h-screen w-full overflow-y-scroll scrollbar" >
             <Switch>
                 <Route path="/feed">
                     <Feed />
