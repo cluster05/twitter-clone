@@ -9,6 +9,7 @@ const Notific = ({ notific }) => {
             </div>
         </div>
     )
+
 }
 
 export default Notific

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import SidenavItem from "./SidenavItem/SidenavItem";
-import { FaTwitter, FaSlackHash, FaBookmark } from 'react-icons/fa';
+import { FaTwitter, FaSlackHash } from 'react-icons/fa';
 import { HiHome, HiBell } from 'react-icons/hi';
 import Avatar from "../../components/Avatar/Avatar";
 import CreateTweet from "./CreateTweet/CreateTweet";
@@ -18,7 +18,6 @@ const Sidenav = ({ signOut }) => {
         { title: 'feed', icon: <HiHome />, link: '/feed' },
         { title: 'trending', icon: <FaSlackHash />, link: '/trending' },
         { title: 'notification', icon: <HiBell />, link: '/notification' },
-        { title: 'bootmark', icon: <FaBookmark />, link: '/bookmark' },
     ];
 
 

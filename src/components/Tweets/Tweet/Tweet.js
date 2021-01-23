@@ -1,4 +1,4 @@
-import TimePassed from './TimePassed';
+import TimePassed from './../../TimePassed/TimePassed';
 import './Tweet.css';
 
 const Tweet = ({ tweet }) => {

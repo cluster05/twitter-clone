@@ -20,16 +20,16 @@ const CreateTweetBox = () => {
             return;
         }
 
-        const tags = [];
+        let tag;
         tweetText.split(' ').forEach(word => {
             if (word[0] === '#') {
-                tags.push(word)
+                tag = word;
             }
         });
 
         const payload = {
             tweet: tweetText,
-            tags,
+            tag,
             created_at: Date.now(),
             user: {
                 name: user.name,
@@ -58,6 +58,7 @@ const CreateTweetBox = () => {
                     placeholder="Tweet" onChange={(event) => setTweetText(event.target.value)}>
 
                 </textarea>
+                <div className="text-sm text-gray-400"> we are currently able track only one hash (#) tag. So while Writing tweet please use only one tag. If you add more than one tag we only keep track last tag of your tweet.</div>
                 <div className="flex justify-end">
                     <button
                         onClick={saveTweet}

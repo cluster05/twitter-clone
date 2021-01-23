@@ -11,11 +11,12 @@ const Trending = () => {
 
     const changeSearchTerm = (event) => {
         setSearchTerm(event.target.value);
-        const queryText = searchTerm;
+
+        const queryText = searchTerm[0] === '#' ? searchTerm : '#' + searchTerm;
 
         const database = firebase.database();
         database.ref('tweets')
-            .orderByChild('tags')
+            .orderByChild('tag')
             .startAt(queryText)
             .endAt(queryText + '\uf8ff')
             .on('value', snapshot => {

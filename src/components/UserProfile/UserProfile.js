@@ -9,7 +9,7 @@ const UserProfile = ({ toggleShowUserPorfile, signOut }) => {
 
     return (
         <div className="w-screen h-screen absolute top-0 left-0 bg-gray-900 bg-opacity-90 z-20">
-            <div className="bg-gray-800 rounded-md py-5 px-8  max-w-3xl mx-auto my-10 relative">
+            <div className="bg-gray-800 rounded-md py-5 px-8  max-w-xl mx-auto my-10 relative">
                 <div className="text-blue-400 text-4xl absolute -top-2 -right-2"
                     onClick={toggleShowUserPorfile}
                 > <AiFillCloseCircle />

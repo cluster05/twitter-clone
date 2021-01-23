@@ -2,7 +2,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Feed from './../Feed/Feed';
 import Trending from './../Trending/Trending';
 import Notification from './../Notification/Notification';
-import Bookmark from './../Bookmark/Bookmark';
 import './Layout.css';
 
 const Layout = () => {
@@ -19,9 +18,6 @@ const Layout = () => {
                 </Route>
                 <Route path="/notification">
                     <Notification />
-                </Route>
-                <Route path="/bookmark">
-                    <Bookmark />
                 </Route>
                 <Route exact path="/">
                     <Redirect to="/feed" />
