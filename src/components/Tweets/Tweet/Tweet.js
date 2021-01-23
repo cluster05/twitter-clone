@@ -1,42 +1,46 @@
-import axios from 'axios';
-import React from 'react';
-import { useState, useEffect } from 'react';
-
-const GET_USER_URL = 'https://jsonplaceholder.typicode.com/users';
+import TimePassed from './../../TimePassed/TimePassed';
+import './Tweet.css';
 
 const Tweet = ({ tweet }) => {
 
-    const [user, setUser] = useState()
+    const buildTweetSentence = () => {
+        const tweetSentence = [];
 
-    useEffect(() => {
-
-        const fetchData = async () => {
-            const response = await axios.get(`${GET_USER_URL + '/' + tweet.userId}`);
-            setUser({
-                username: response.data.username,
-                name: response.data.name
-            });
-        }
-
-        fetchData();
-
-    }, [])
-
+        tweet.tweet.split(' ').forEach(word => {
+            if (word[0] === '#') {
+                tweetSentence.push(<span className="text-blue-400 cursor-pointer"> {word} </span>);
+            } else {
+                tweetSentence.push(word + ' ');
+            }
+        });
+        return tweetSentence;
+    }
 
     return (
         <div className="m-4 p-5 max-w-xl rounded-md shadow-md bg-gray-800">
+            <TimePassed created_at={tweet.created_at} />
             <div>
-                <span> {tweet.title}</span>
-                <br />
-                <span>{tweet.body}</span>
+                {buildTweetSentence()}
             </div>
-            { user ?
-                <div className="py-2 flex flex-col">
-                    <span className="text-blue-400"> @{user.username} </span>
-                    <span className="font-medium text-lg tracking-wider"> {user.name} </span>
-                </div> :
-                null
-            }
+            <div className="mt-3 flex items-center">
+                <img
+                    className="mr-3 w-8 h-8 rounded-full"
+                    src={tweet.user.photoURL}
+                    alt={tweet.user.name} />
+                <span className="text-blue-400 cursor-pointer relative username">
+                    @{tweet.user.username}
+                    <div className="absolute top-6 left-0 bg-gray-800 border border-gray-600 text-gray-300 px-3 py-5 rounded-md userInfo z-10" style={{ minWidth: 300 }}>
+                        <div className=" flex flex-col items-center justify-center ">
+                            <img
+                                className="w-16 h-16 rounded-full"
+                                src={tweet.user.photoURL}
+                                alt={tweet.user.name} />
+                            <span className="text-blue-400"> @{tweet.user.username} </span>
+                            <span> {tweet.user.name} </span>
+                        </div>
+                    </div>
+                </span>
+            </div>
         </div>
     )
 }

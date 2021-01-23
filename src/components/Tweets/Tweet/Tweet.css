@@ -1,0 +1,7 @@
+.userInfo {
+  display: none;
+}
+
+.username:hover .userInfo {
+  display: block;
+}
