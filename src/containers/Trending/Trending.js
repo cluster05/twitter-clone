@@ -9,10 +9,11 @@ const Trending = () => {
     const [tweets, setTweets] = useState([]);
 
 
-    const changeSearchTerm = (event) => {
-        setSearchTerm(event.target.value);
+    const searchTag = () => {
 
         const queryText = searchTerm[0] === '#' ? searchTerm : '#' + searchTerm;
+
+        new Promise(resolve => { setTimeout(resolve, 2000); })
 
         const database = firebase.database();
         database.ref('tweets')
@@ -35,14 +36,18 @@ const Trending = () => {
                     const tweetRevArray = tweetArray.reverse()
                     setTweets(tweetRevArray);
                 }
-                console.log(tweetArray);
+                // console.log(tweetArray);
             });
     }
 
     return (
         <div className="text-gray-400">
-            <SearchBar changeSearchTerm={changeSearchTerm} searchTerm={searchTerm} />
-            <Tweets tweets={tweets} />
+            <SearchBar
+                changeSearchTerm={(event) => { setSearchTerm(event.target.value) }}
+                searchTerm={searchTerm}
+                searchTag={searchTag}
+            />
+            <Tweets tweets={tweets} loadingMessage={'type tag to search ...'} />
         </div>
     )
 }

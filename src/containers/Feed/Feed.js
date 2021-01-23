@@ -28,13 +28,13 @@ const Feed = () => {
                 const tweetRevArray = tweetArray.reverse()
                 setTweets(tweetRevArray);
             }
-            console.log(tweetArray);
+            // console.log(tweetArray);
         });
 
     }, [])
 
     return (
-        <div className="text-white">
+        <div className="text-gray-300">
             <Tweets tweets={tweets} />
         </div>
     )

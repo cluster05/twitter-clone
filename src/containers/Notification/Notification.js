@@ -36,7 +36,7 @@ const Notification = () => {
             {
                 notifications.length > 0 ?
                     notifications.map(noti => <Notific key={noti.id} notific={noti} />) :
-                    <div className="m-4 p-5 max-w-2xl font-semibold text-2xl rounded-md shadow-md bg-gray-800">
+                    <div className="m-4 p-5 max-w-2xl font-semibold text-2xl rounded-md shadow-md bg-gray-800 text-gray-300">
                         Please wait. fetching data ...
                     </div>
 
