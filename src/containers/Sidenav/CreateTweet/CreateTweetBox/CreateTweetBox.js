@@ -3,7 +3,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { TweetContext } from "../../../../Context/TweetContext";
 import { useUser } from './../../../../hooks/useUser';
 import firebase from 'firebase';
-import { Redirect, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 const CreateTweetBox = ({ history }) => {
 
