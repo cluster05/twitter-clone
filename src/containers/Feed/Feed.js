@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Tweets from '../../components/Tweets/Tweets';
 import firebase from 'firebase';
@@ -11,7 +10,7 @@ const Feed = () => {
 
         const database = firebase.database();
 
-        database.ref('/tweets').on('value', snapshot => {
+        database.ref('tweets').orderByChild('created_at').on('value', snapshot => {
 
             const tweetArray = [];
             const tweetsResponse = snapshot.val();
@@ -26,7 +25,8 @@ const Feed = () => {
                     }
                     tweetArray.push(tweet)
                 });
-                setTweets(tweetArray);
+                const tweetRevArray = tweetArray.reverse()
+                setTweets(tweetRevArray);
             }
             console.log(tweetArray);
         });
