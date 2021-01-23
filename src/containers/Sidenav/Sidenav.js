@@ -32,7 +32,7 @@ const Sidenav = ({ signOut }) => {
                 <UserProfile signOut={signOut} toggleShowUserPorfile={() => setShowUserPorfile(!showUserPorfile)} /> :
                 null
             }
-            <div className="w-32 flex flex-col justify-between">
+            <div className="w-16 md:w-24 lg:w-32 flex flex-col justify-between">
                 <div>
                     {navList.map(navItem =>
                         <SidenavItem

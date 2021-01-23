@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import SearchBar from "../../components/SearchBar/SearchBar"
 import Tweets from './../../components/Tweets/Tweets';
 import firebase from 'firebase';
@@ -11,9 +11,11 @@ const Trending = () => {
 
     const searchTag = () => {
 
+        if (searchTerm.length === 0) {
+            alert('Please provide the search field');
+            return
+        }
         const queryText = searchTerm[0] === '#' ? searchTerm : '#' + searchTerm;
-
-        new Promise(resolve => { setTimeout(resolve, 2000); })
 
         const database = firebase.database();
         database.ref('tweets')

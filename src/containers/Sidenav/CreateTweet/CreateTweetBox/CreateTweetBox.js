@@ -3,8 +3,9 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { TweetContext } from "../../../../Context/TweetContext";
 import { useUser } from './../../../../hooks/useUser';
 import firebase from 'firebase';
+import { Redirect, withRouter } from "react-router-dom";
 
-const CreateTweetBox = () => {
+const CreateTweetBox = ({ history }) => {
 
     const [tweetText, setTweetText] = useState('');
     const tweetContext = useContext(TweetContext);
@@ -41,6 +42,10 @@ const CreateTweetBox = () => {
         const timeStamp = Date.now() + '-tweet-' + Math.floor(Math.random() * 10000000)
         firebase.database().ref('/tweets/' + timeStamp).set(payload);
         tweetContext.changeCreateTweet();
+
+        // redirect to feed page
+        history.push('/feed');
+
     }
 
     return (
@@ -71,6 +76,6 @@ const CreateTweetBox = () => {
     )
 }
 
-export default CreateTweetBox;
+export default withRouter(CreateTweetBox);
 
 
