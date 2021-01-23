@@ -8,8 +8,9 @@ const TimePassed = ({ created_at }) => {
 
 
   useEffect(() => {
+
     const timeOut = setInterval(() => {
-      setChangeInterval()
+      setChangeInterval(Math.random())
     }, 10000)
     return () => {
       clearInterval(timeOut);

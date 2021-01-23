@@ -6,10 +6,12 @@ import Avatar from "../../components/Avatar/Avatar";
 import CreateTweet from "./CreateTweet/CreateTweet";
 import CreateTweetBox from './CreateTweet/CreateTweetBox/CreateTweetBox';
 import { TweetContext } from './../../Context/TweetContext';
+import UserProfile from './../../components/UserProfile/UserProfile';
 
-const Sidenav = () => {
+const Sidenav = ({ signOut }) => {
 
     const [createTweet, setCreateTweet] = useState(false);
+    const [showUserPorfile, setShowUserPorfile] = useState(false);
 
     const navList = [
         { title: 'twitter', icon: <FaTwitter />, link: '' },
@@ -19,10 +21,16 @@ const Sidenav = () => {
         { title: 'bootmark', icon: <FaBookmark />, link: '/bookmark' },
     ];
 
+
+
     return (
         <TweetContext.Provider value={{ changeCreateTweet: () => setCreateTweet(!createTweet) }}>
             { createTweet ?
                 <CreateTweetBox /> :
+                null
+            }
+            { showUserPorfile ?
+                <UserProfile signOut={signOut} toggleShowUserPorfile={() => setShowUserPorfile(!showUserPorfile)} /> :
                 null
             }
             <div className="w-32 flex flex-col justify-between">
@@ -38,7 +46,7 @@ const Sidenav = () => {
 
                     <CreateTweet />
                 </div>
-                <Avatar />
+                <Avatar toggleShowUserPorfile={() => setShowUserPorfile(!showUserPorfile)} />
             </div>
         </TweetContext.Provider>
     )
