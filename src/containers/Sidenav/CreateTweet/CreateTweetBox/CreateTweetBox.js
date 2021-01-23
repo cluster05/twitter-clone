@@ -20,7 +20,7 @@ const CreateTweetBox = () => {
             return;
         }
 
-        let tag;
+        let tag = 'default';
         tweetText.split(' ').forEach(word => {
             if (word[0] === '#') {
                 tag = word;
