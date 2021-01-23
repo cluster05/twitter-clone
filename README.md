@@ -5,6 +5,6 @@
 </p>
 
 <p align="center">
-    <a href="https://cluster05.github.io/feed"> View on Live server </a>
+    <a href="https://ajaykumbhar-reactapp.web.app/feed"> View on Live server </a>
 </p>
 
