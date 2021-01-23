@@ -1,5 +1,10 @@
-<h1 align="center">Twitter Clone - Reactjs </h1>
+<h1 align="center">Twitter Clone - React js </h1>
 
 <p align="center">
-  <img src="./src/assests/twitter.gif" alt="twitter-clone" width="300px" height="200px"/>
+    <img src="https://github.com/cluster05/twitter-clone/blob/readme/src/assets/twitter.gif" alt="twitter-clone" width="800px" height="400px"/>
 </p>
+
+<p align="center">
+    <a href="https://cluster05.github.io/feed"> View on Live server </a>
+</p>
+
